@@ -7,6 +7,7 @@ import { User } from '../model/model';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthenticationService {
 
   public user: User;

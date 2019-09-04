@@ -3,10 +3,11 @@
 
     <!-- Page Wrapper -->
     <div class="page-wrapper">
-        <div class="container-fluid">
-
-        <h1>Welcome to Dashboard, You have logged In Successfully!</h1>
-
+        <div class="container-fluid d-flex justify-content-between">
+        <h3>Welcome to Dashboard, You have logged In Successfully!</h3>
+        <div>
+            <a class="dropdown-item" href="#" (click)="$event.preventDefault();logOut();">Logout</a>
+        </div>
         </div>
     </div>
     <!-- Page Wrapper End -->

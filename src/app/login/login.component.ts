@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
-import { DataService } from '../services/data.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthenticationService } from './../services/authentication.service';
 import * as passwordHash from 'js-sha512';
 import { first } from 'rxjs/operators';
@@ -26,7 +25,7 @@ export class LoginComponent implements OnInit {
     private router: Router) {
       this.titleService.setTitle('Login');
     if (this.authenticationService.currentUserValue) {
-      this.router.navigate(['/horses']);
+      this.router.navigate(['/dashboard']);
     }
   }
 
@@ -58,7 +57,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           console.log(data);
-          this.router.navigate(['/horses']);
+          this.router.navigate(['/dashboard']);
         },
         err => {
           console.log(err.error.errors);
