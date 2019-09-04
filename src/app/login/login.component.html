@@ -1,0 +1,25 @@
+<div class="login-wrapper">
+  <div class="login-box card">
+    <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="userLogin()">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email</label>
+          <input type="email" class="form-control" formControlName="email"
+            [ngClass]="{ 'is-invalid': isSubmitted && loginFormControls.email.errors }">
+          <div *ngIf="isSubmitted && loginFormControls.email.errors" class="invalid-feedback">
+            <span *ngIf="loginFormControls.email.errors.required">Email is required</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" formControlName="password"
+            [ngClass]="{ 'is-invalid': isSubmitted && loginFormControls.password.errors }">
+          <div *ngIf="isSubmitted && loginFormControls.password.errors" class="invalid-feedback">
+            <span *ngIf="loginFormControls.password.errors.required">Password is required</span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

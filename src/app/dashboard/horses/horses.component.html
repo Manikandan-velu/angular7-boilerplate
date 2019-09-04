@@ -1,0 +1,38 @@
+<div class="mb-4">
+  <button type="button" class="btn btn-primary" (click)="addHorse()">Add Horse</button>
+</div>
+
+<div class="card mb-5">
+  <div class="card-body">
+    <div class="table-responsive" *ngIf="horses.length > 0">
+      <table class="table">
+        <thead class="border-top-none">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Color</th>
+            <th scope="col">Number</th>
+            <th scope="col">AQHA</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let horse of horses; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{horse.horse_name}}</td>
+            <td>{{horse.color}}</td>
+            <td>{{horse.horse_number}}</td>
+            <td>{{horse.aqha_number}}</td>
+            <td>
+              <div class="btn-group" role="group" aria-label="Action">
+                <button type="button" class="btn btn-outline-secondary" (click)="viewHorseDetail(horse.id)"><fa name="eye"></fa></button>
+                <button type="button" class="btn btn-outline-secondary" (click)="editHorse(horse.id)"><fa name="pencil"></fa></button>
+                <button type="button" class="btn btn-outline-secondary" (click)="deleteHorse(horse.id)"><fa name="trash-o"></fa></button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

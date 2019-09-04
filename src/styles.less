@@ -1,0 +1,276 @@
+.rounded(@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+    .background-clip();
+}
+
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+    -webkit-border-top-right-radius: @topright;
+    -webkit-border-bottom-right-radius: @bottomright;
+    -webkit-border-bottom-left-radius: @bottomleft;
+    -webkit-border-top-left-radius: @topleft;
+    -moz-border-radius-topright: @topright;
+    -moz-border-radius-bottomright: @bottomright;
+    -moz-border-radius-bottomleft: @bottomleft;
+    -moz-border-radius-topleft: @topleft;
+    border-top-right-radius: @topright;
+    border-bottom-right-radius: @bottomright;
+    border-bottom-left-radius: @bottomleft;
+    border-top-left-radius: @topleft;
+    .background-clip();
+}
+
+.bordered(@border-style: solid, @border-size: 1px, @top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) {
+    border-top: @border-style @border-size @top-color;
+    border-left: @border-style @border-size @left-color;
+    border-right: @border-style @border-size @right-color;
+    border-bottom: @border-style @border-size @bottom-color;
+}
+
+.bordered-common(@border-style: solid, @border-size: 1px, @border-color: #EEE) {
+    border: @border-style @border-size @border-color;
+}
+
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+    background: @color;
+    background: -webkit-gradient(linear,
+        left bottom,
+        left top,
+        color-stop(0, @start),
+        color-stop(1, @stop));
+    background: -ms-linear-gradient(bottom,
+        @start,
+        @stop);
+    background: -moz-linear-gradient(center bottom,
+        @start 0%,
+        @stop 100%);
+    background: -o-linear-gradient(@stop,
+        @start);
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @spread: 0, @alpha: 0.1) {
+    -webkit-box-shadow: @x-axis @y-axis @blur @spread rgba(0, 0, 0, @alpha);
+    -moz-box-shadow: @x-axis @y-axis @blur @spread rgba(0, 0, 0, @alpha);
+    box-shadow: @x-axis @y-axis @blur @spread rgba(0, 0, 0, @alpha);
+}
+
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+    -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+    -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+    box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+
+.opacity(@opacity: 0.5) {
+    -moz-opacity: @opacity;
+    -khtml-opacity: @opacity;
+    -webkit-opacity: @opacity;
+    opacity: @opacity;
+    @opperc: @opacity * 100;
+    -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+    filter: ~"alpha(opacity=@{opperc})";
+}
+
+.transition-duration(@duration: 0.2s) {
+    -moz-transition-duration: @duration;
+    -webkit-transition-duration: @duration;
+    -o-transition-duration: @duration;
+    transition-duration: @duration;
+}
+
+.transform(@arguments) {
+    -webkit-transform: @arguments;
+    -moz-transform: @arguments;
+    -o-transform: @arguments;
+    -ms-transform: @arguments;
+    transform: @arguments;
+}
+
+.rotation(@deg:5deg){
+    .transform(rotate(@deg));
+}
+
+.scale(@ratio:1.5){
+    .transform(scale(@ratio));
+}
+
+.transition(@duration:0.2s, @ease:ease-out) {
+    -webkit-transition: all @duration @ease;
+    -moz-transition: all @duration @ease;
+    -o-transition: all @duration @ease;
+    transition: all @duration @ease;
+}
+
+.box-sizing(@sizing: border-box) {
+    -ms-box-sizing: @sizing;
+    -moz-box-sizing: @sizing;
+    -webkit-box-sizing: @sizing;
+    box-sizing: @sizing;
+}
+
+.translate(@x:0, @y:0) {
+    .transform(translate(@x, @y));
+}
+
+.background-clip(@argument: padding-box) {
+    -moz-background-clip: @argument;
+    -webkit-background-clip: @argument;
+    background-clip: @argument;
+}
+
+@theme-color: #59217b;
+@theme-secondary-color: #565656;
+@theme-tertiary-color: #eee;
+
+*{
+    outline: none !important; 
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #edf1f5;
+    color: #404040;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Roboto', sans-serif;
+    color: #292929;
+    font-weight: 700;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+label, strong{
+    font-weight: 700;
+}
+
+/*** Login ***/
+
+.login-wrapper{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+    padding: 5% 0;
+    position: fixed;
+    .login-box{
+        width: 400px;
+        margin: 0 auto;
+    }
+}
+
+.form-control{
+    &.is-invalid{
+        background-image: none;
+    }
+}
+
+#main-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+/*** Top Bar ***/
+.topbar{
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+    .navbar{
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 60px;
+        .navbar-header{
+            line-height: 60px;
+        }
+        .navbar-brand{
+            margin-right: 0;
+            padding-bottom: 0;
+            padding-top: 0;
+            color: #000;
+            min-height: 60px;
+            img{
+                height: 32px;
+            }
+        }
+        &.bg-dark{
+            background-color: @theme-color !important;
+        }
+    }
+}
+
+/*** Sidebar ***/
+.sidebar{
+    position: fixed;
+    width: 220px;
+    height: 100%;
+    top: 0;
+    z-index: 20;
+    padding-top: 70px;
+    background-color: #fff;
+    .drop-shadow(1px, 0, 20px, 0, .08);
+    .profile-img{
+        margin: 15px auto;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/*** Page Wrapper ***/
+
+.page-wrapper{
+    padding-top: 60px;
+    background: #edf1f5;
+    position: relative;
+    .container-fluid{
+        padding: 0 25px;
+    }
+}
+
+/*** Page Title ***/
+.page-title{
+    background: #fff;
+    padding: 14px 10px;
+    margin: 0 -25px 25px;
+    h4{
+        margin-bottom: 0;
+    }
+}
+
+/*** Card ***/
+
+.card{
+    border: 0 solid transparent;
+    .rounded(0);
+}
+
+/*** Table ***/
+
+.table{
+    td,th{
+        padding: 1rem;
+        border-color: #e9ecef;
+    }
+    thead{
+        th{
+            border-color: #e9ecef;
+        }
+        &.border-top-none{
+            th{
+                border-top: 0;
+            }
+        }
+    }
+}
+
+
+/*** Media Quries ***/

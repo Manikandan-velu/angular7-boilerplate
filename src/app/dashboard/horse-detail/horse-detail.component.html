@@ -1,0 +1,22 @@
+<div class="mb-4">
+  <a class="btn btn-primary" routerLink="/horses">Back To Horses</a>
+</div>
+
+<div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="assets/images/horse.png" class="card-img" alt="Horse">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title">{{horse?.horse_name}}</h3>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item pl-0"><strong>Horse Color: </strong>{{horse?.color}}</li>
+              <li class="list-group-item pl-0"><strong>Horse Number: </strong>{{horse?.horse_number}}</li>
+              <li class="list-group-item pl-0"><strong>AQHA Number: </strong>{{horse?.aqha_number}}</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
