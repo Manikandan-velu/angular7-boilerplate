@@ -9,12 +9,13 @@ import { AuthenticationService } from './../services/authentication.service';
   declarations: [LoginComponent],
   imports: [
     CommonModule,
-    LoginRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LoginRoutingModule,
   ],
   providers: [
     AuthenticationService
   ]
 })
+
 export class LoginModule { }
