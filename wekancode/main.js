@@ -354,7 +354,7 @@ var AuthenticationService = /** @class */ (function () {
     AuthenticationService.prototype.login = function (email, password) {
         var _this = this;
         var data = { email: email, password: password };
-        return this.http.post('http://dev.api.staller.show/v1/users/login', data)
+        return this.http.post('http://localhost/v1/users/login', data)
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) {
             // login successful if there's a jwt token in the response
             _this.user = res['data'];

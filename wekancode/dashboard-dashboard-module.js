@@ -44,7 +44,7 @@ var DashboardRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Wrapper -->\n<div id=\"main-wrapper\">\n\n    <!-- Page Wrapper -->\n    <div class=\"page-wrapper\">\n        <div class=\"container-fluid d-flex justify-content-between\">\n        <h3>Welcome to Dashboard, You have logged In Successfully!</h3>\n        <div>\n            <a class=\"dropdown-item\" href=\"#\" (click)=\"$event.preventDefault();logOut();\">Logout</a>\n        </div>\n        </div>\n    </div>\n    <!-- Page Wrapper End -->\n\n</div>\n<!-- Wrapper End -->"
+module.exports = "<!-- Wrapper -->\r\n<div id=\"main-wrapper\">\r\n\r\n    <!-- Page Wrapper -->\r\n    <div class=\"page-wrapper\">\r\n        <div class=\"container-fluid d-flex justify-content-between\">\r\n        <h3>Welcome to Dashboard, You have logged In Successfully!</h3>\r\n        <div>\r\n            <a class=\"dropdown-item\" href=\"#\" (click)=\"$event.preventDefault();logOut();\">Logout</a>\r\n        </div>\r\n        </div>\r\n    </div>\r\n    <!-- Page Wrapper End -->\r\n\r\n</div>\r\n<!-- Wrapper End -->"
 
 /***/ }),
 
