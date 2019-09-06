@@ -26,7 +26,7 @@ export class AuthenticationService {
 
   login(email: string, password: string) {
     let data = { email: email, password: password };
-    return this.http.post<any>('http://dev.api.staller.show/v1/users/login', data)
+    return this.http.post<any>('http://localhost/v1/users/login', data)
       .pipe(map(res => {
         // login successful if there's a jwt token in the response
         this.user = res['data'];
