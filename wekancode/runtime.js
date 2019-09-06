@@ -63,7 +63,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"404-not-found-module":"404-not-found-module","common":"common","dashboard-dashboard-module":"dashboard-dashboard-module","login-login-module":"login-login-module"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"404-not-found-module":"404-not-found-module","dashboard-dashboard-module":"dashboard-dashboard-module","login-login-module":"login-login-module"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
