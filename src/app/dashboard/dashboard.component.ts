@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.less']
 })
+
 export class DashboardComponent implements OnInit {
 
   constructor(public router: Router, private authenticationService: AuthenticationService) { }
