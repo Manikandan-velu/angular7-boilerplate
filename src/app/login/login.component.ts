@@ -11,6 +11,7 @@ import { Title } from "@angular/platform-browser";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.less']
 })
+
 export class LoginComponent implements OnInit {
 
   private userEmail: string;
@@ -37,13 +38,11 @@ export class LoginComponent implements OnInit {
 
   }
 
-
   get loginFormControls() {
     return this.loginForm.controls;
   }
 
   userLogin() {
-    console.log(this.loginForm.value);
     this.isSubmitted = true;
     if (this.loginForm.invalid) {
       return;
