@@ -30,7 +30,7 @@ export class AuthenticationService {
       .pipe(map(res => {
         // login successful if there's a jwt token in the response
         this.user = res['data'];
-        if (this.user && this.user.access_token) {
+        if (this.user) {
           // store user details and jwt token in session storage to keep user logged in between page refreshes
           sessionStorage.setItem('currentUser', JSON.stringify(this.user));
           sessionStorage.setItem('isLoggedin', 'true');
