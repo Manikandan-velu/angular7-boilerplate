@@ -50,6 +50,8 @@ export class LoginComponent implements OnInit {
     this.userEmail = this.loginForm.value.email;
     this.userPass = passwordHash.sha512(this.loginForm.value.password);
     console.log(this.userPass);
+    this.router.navigate(['/dashboard']);
+    return false;
     this.authenticationService.login(this.userEmail, this.userPass)
       .pipe(first())
       .subscribe(
